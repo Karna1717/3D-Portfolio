@@ -102,6 +102,88 @@
     transform: translateY(-2px);
 }
 
+.contact-links-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.contact-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    padding: 2rem 1rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.contact-text {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-main);
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Base Hover Shimmer */
+.contact-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+.contact-action-btn:hover::before {
+    left: 100%;
+}
+
+.contact-action-btn:hover .contact-icon {
+    transform: scale(1.1) translateY(-2px);
+}
+
+/* Custom Brand Glows */
+.contact-action-btn:nth-child(1):hover { /* Email */
+    border-color: #ff8c00;
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+    background: rgba(255, 140, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.contact-action-btn:nth-child(2):hover { /* LinkedIn */
+    border-color: #0077b5;
+    box-shadow: 0 10px 30px rgba(0, 119, 181, 0.2);
+    background: rgba(0, 119, 181, 0.1);
+    transform: translateY(-5px);
+}
+
+.contact-action-btn:nth-child(3):hover { /* GitHub */
+    border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
 @media (max-width: 768px) {
     .overlay-content {
         width: 100%;

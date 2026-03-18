@@ -20,13 +20,18 @@ export const Overlay = () => {
         },
         about: {
             title: "ABOUT ME",
-            subtitle: "Bridging Logic & Aesthetics",
-            text: "I am a Full-Stack Engineer who specializes in both robust backend architectures and deeply immersive 3D frontend experiences.\n\nWhether I am designing scalable APIs in Java/Node.js or writing custom physics engines in WebGL and React Three Fiber, my goal is to blend technical precision with award-winning UX/UI."
+            subtitle: "Full-Stack Engineer & Vibe Coder",
+            text: "I specialize in both robust backend architectures and deeply immersive 3D frontend experiences.\n\nI consider myself a true 'Vibe Coder' — I believe that great software shouldn't just be functional, it should feel magical. Whether I'm building scalable APIs in Java or writing custom physics engines in React Three Fiber, my goal is to blend deep technical precision with premium, highly-interactive experiences."
         },
         contact: {
             title: "CONTACT",
             subtitle: "Open Frequencies",
-            text: "My comm-link is always open. I am actively seeking Software Engineering roles where I can push the boundaries of web technology.\n\n📧 karan.tathe777@gmail.com\n💼 linkedin.com/in/karantathe\n💻 github.com/karantathe"
+            text: "My comm-link is always open. I am actively seeking Software Engineering roles where I can push the boundaries of web technology.",
+            links: [
+                { icon: "📧", text: "Email Me", url: "mailto:karan.tathe777@gmail.com" },
+                { icon: "💼", text: "LinkedIn", url: "https://www.linkedin.com/in/karan-tathe-3aa84a33b" },
+                { icon: "💻", text: "GitHub", url: "https://github.com/Karna1717" }
+            ]
         }
     }
 
@@ -60,6 +65,16 @@ export const Overlay = () => {
                             >
                                 {data.actionText} →
                             </a>
+                        )}
+                        {data.links && (
+                            <div className="contact-links-container">
+                                {data.links.map((link, i) => (
+                                    <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="contact-action-btn">
+                                        <span className="contact-icon">{link.icon}</span>
+                                        <span className="contact-text">{link.text}</span>
+                                    </a>
+                                ))}
+                            </div>
                         )}
                     </motion.div>
                 </motion.div>
