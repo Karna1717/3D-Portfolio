@@ -1,0 +1,142 @@
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    /* Slight dim */
+    backdrop-filter: blur(2px);
+    z-index: 20;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    /* Allow seeing through portions */
+}
+
+.overlay-content {
+    pointer-events: auto;
+    width: 50%;
+    max-width: 600px;
+    height: 100%;
+    background: rgba(5, 5, 20, 0.85);
+    border-left: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 4rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: white;
+    color: black;
+}
+
+.overlay-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    opacity: 0.8;
+    letter-spacing: -2px;
+}
+
+.overlay-content h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.overlay-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    width: fit-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.resume-download-btn:hover {
+    background: var(--color-primary);
+    color: black;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 100%;
+        height: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(0, 255, 255, 0.2);
+        padding: 2rem 1.5rem;
+        padding-top: 4rem;
+        overflow-y: auto;
+        /* Ensure scrollable content */
+    }
+
+    .overlay-content h1 {
+        font-size: 2.5rem;
+        /* Smaller title */
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.95rem;
+        /* Readable font size */
+    }
+
+    .close-btn {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 35px;
+        height: 35px;
+        background: rgba(0, 0, 0, 0.5);
+        /* Easier to see */
+    }
+}
