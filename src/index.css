@@ -16,6 +16,7 @@ body {
   font-family: var(--font-main);
   color: white;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -34,4 +35,19 @@ body {
 
 canvas {
   touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure buttons and interactive elements are touch-friendly */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve text rendering on mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 }
